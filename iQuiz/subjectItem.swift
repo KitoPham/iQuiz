@@ -13,5 +13,11 @@ class subjectItem: NSObject {
     var subjectTitle : String = ""
     var descriptionText : String = ""
     var icon : String = ""
+    
+    init(_ subject : String, _ description : String, _ icon : String){
+        subjectTitle = subject
+        descriptionText = description
+        self.icon = icon
+    }
 
 }

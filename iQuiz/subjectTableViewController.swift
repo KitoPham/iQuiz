@@ -8,15 +8,25 @@
 
 import UIKit
 
+
 class subjectTableViewController: UITableViewController {
 
-    
-    var subjectList : [SubjectItem]?
+    var subjectList : [subjectItem] = []
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        let topic1 = subjectItem("Mathematics", "This is a quiz about math", "mathicon")
+        let topic2 = subjectItem("Marvel Super Heroes", "This is a quiz about marvel", "heroicon")
+        let topic3 = subjectItem("Science", "This is a quiz about science", "scienceicon")
+        
+        subjectList = [topic1, topic2, topic3]
 
-        let topic1 = SubjectItem()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,27 +34,26 @@ class subjectTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return subjectList.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath) as! subjectTableViewCell
+
+        let subjectItem = self.subjectList[indexPath.row]
+        cell.TitleLabel.text = subjectItem.subjectTitle
+        cell.descriptionLabel.text = subjectItem.descriptionText
+        cell.imageObject.image = UIImage(named: subjectItem.icon)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -14,6 +14,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let alert = UIAlertController(title:"settings", message:"you just opened settings!!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title:"close", style: UIAlertActionStyle.default, handler:nil))
+        self.present(alert,animated:true, completion: nil)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
