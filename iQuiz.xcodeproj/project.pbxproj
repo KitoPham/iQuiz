@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C5F513C1EBAF0620000526E /* questionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F513B1EBAF0620000526E /* questionObject.swift */; };
+		0C5F513E1EBAFA000000526E /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F513D1EBAFA000000526E /* questionViewController.swift */; };
 		0CC228331EB84EAE003BCC3B /* subjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC228321EB84EAE003BCC3B /* subjectTableViewCell.swift */; };
 		0CC228351EB84EB4003BCC3B /* subjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC228341EB84EB4003BCC3B /* subjectTableViewController.swift */; };
 		0CCEC08D1EB8457D00D054F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC08C1EB8457D00D054F1 /* AppDelegate.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C5F513B1EBAF0620000526E /* questionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = questionObject.swift; sourceTree = "<group>"; };
+		0C5F513D1EBAFA000000526E /* questionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
 		0CC228321EB84EAE003BCC3B /* subjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subjectTableViewCell.swift; sourceTree = "<group>"; };
 		0CC228341EB84EB4003BCC3B /* subjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subjectTableViewController.swift; sourceTree = "<group>"; };
 		0CCEC0891EB8457D00D054F1 /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,8 +110,10 @@
 				0CC228321EB84EAE003BCC3B /* subjectTableViewCell.swift */,
 				0CC228341EB84EB4003BCC3B /* subjectTableViewController.swift */,
 				0CCEC0C21EB849A100D054F1 /* subjectItem.swift */,
+				0C5F513B1EBAF0620000526E /* questionObject.swift */,
 				0CCEC08C1EB8457D00D054F1 /* AppDelegate.swift */,
 				0CCEC08E1EB8457D00D054F1 /* ViewController.swift */,
+				0C5F513D1EBAFA000000526E /* questionViewController.swift */,
 				0CCEC0901EB8457D00D054F1 /* Main.storyboard */,
 				0CCEC0931EB8457E00D054F1 /* Assets.xcassets */,
 				0CCEC0951EB8457E00D054F1 /* LaunchScreen.storyboard */,
@@ -269,9 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CC228331EB84EAE003BCC3B /* subjectTableViewCell.swift in Sources */,
+				0C5F513E1EBAFA000000526E /* questionViewController.swift in Sources */,
 				0CC228351EB84EB4003BCC3B /* subjectTableViewController.swift in Sources */,
 				0CCEC08F1EB8457D00D054F1 /* ViewController.swift in Sources */,
 				0CCEC0C31EB849A100D054F1 /* subjectItem.swift in Sources */,
+				0C5F513C1EBAF0620000526E /* questionObject.swift in Sources */,
 				0CCEC08D1EB8457D00D054F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
