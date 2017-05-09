@@ -10,9 +10,12 @@ import UIKit
 
 class subjectItem: NSObject {
     
+    var questions : [QuestionObject] = []
     var subjectTitle : String = ""
     var descriptionText : String = ""
     var icon : String = ""
+    
+
     
     init(_ subject : String, _ description : String, _ icon : String){
         subjectTitle = subject

@@ -12,11 +12,15 @@ import UIKit
 class subjectTableViewController: UITableViewController {
 
     var subjectList : [subjectItem] = []
+    var subjectNum = 0
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         let topic1 = subjectItem("Mathematics", "This is a quiz about math", "mathicon")
+        let QuestionOne = QuestionObject(4, "What is 2+2", ["1", "2", "3", "4"])
+        let QuestionTwo = QuestionObject(2, "What is 1+1", ["1", "2", "3", "4"])
+        topic1.questions = [QuestionOne,QuestionTwo]
         let topic2 = subjectItem("Marvel Super Heroes", "This is a quiz about marvel", "heroicon")
         let topic3 = subjectItem("Science", "This is a quiz about science", "scienceicon")
         
@@ -50,10 +54,18 @@ class subjectTableViewController: UITableViewController {
         cell.TitleLabel.text = subjectItem.subjectTitle
         cell.descriptionLabel.text = subjectItem.descriptionText
         cell.imageObject.image = UIImage(named: subjectItem.icon)
-
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        subjectNum = indexPath.row
+        performSegue(withIdentifier: "ToQuestion", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let questionView = segue.destination as! questionViewController
+        questionView.subjectTopic = subjectList[subjectNum]
+    }
 
     /*
     // Override to support conditional editing of the table view.
