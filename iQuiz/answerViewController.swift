@@ -56,11 +56,11 @@ class answerViewController: UIViewController {
         CorrectLabel.text = "\(correctNum) out of \(questionNum) correct"
         
         let recognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
-        recognizer.direction = .right
+        recognizer.direction = .left
         self.view .addGestureRecognizer(recognizer)
         
         let leftrecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
-        leftrecognizer.direction = .left
+        leftrecognizer.direction = .right
         self.view .addGestureRecognizer(leftrecognizer)
         
         
