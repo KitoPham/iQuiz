@@ -33,7 +33,7 @@ class FinishedViewController: UIViewController {
         } else {
             DescriptionLabel.text = "Yikes!"
         }
-        percentLabel.text = String(percent * 100) + "%"
+        percentLabel.text = String(round(percent * 100)) + "%"
         StatLabel.text = "\(correct) out of \(total)"
         
         

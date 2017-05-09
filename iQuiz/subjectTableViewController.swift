@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 
 class subjectTableViewController: UITableViewController {
@@ -21,7 +22,37 @@ class subjectTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableViewObject.delegate = self
         self.tableViewObject.dataSource = self
-        let topic1 = subjectItem("Mathematics", "This is a quiz about math", "mathicon")
+        let url = URL(string: "https://tednewardsandbox.site44.com/questions.json")
+
+        Alamofire.request(url!).responseJSON{ response in
+            debugPrint(response)
+            if let json = response.result.value as? [[String:Any]]{
+                for index in 0...json.count - 1{
+                    let title = json[index]["title"] as! String
+                    let description = json[index]["desc"] as!String
+                    let questions = json[index]["questions"] as! [[String:Any]]
+                    var questionList : [QuestionObject] = []
+                    for num in 0...questions.count - 1{
+                        let question = questions[num]["text"] as! String
+                        let correctAnswer = questions[num]["answer"] as! String
+                        let answers = questions[num]["answers"] as! [String]
+                        questionList.append(QuestionObject(Int(correctAnswer)!, question, answers))
+                    }
+                    
+                    self.subjectList.append(subjectItem(title, description, "mathicon"))
+                    self.subjectList[index].questions = questionList
+                    
+                }
+                /*print("JSON: \(json)")*/
+            }
+            self.tableView.reloadData()
+        }
+       
+        
+        
+        
+        
+       /* let topic1 = subjectItem("Mathematics", "This is a quiz about math", "mathicon")
         let QuestionOne = QuestionObject(4, "What is 2+2", ["1", "2", "3", "4"])
         let QuestionTwo = QuestionObject(2, "What is 1+1", ["1", "2", "3", "4"])
         topic1.questions = [QuestionOne,QuestionTwo]
@@ -31,8 +62,10 @@ class subjectTableViewController: UITableViewController {
         topic2.questions = [QuestionOne1, QuestionTwo2]
         let topic3 = subjectItem("Science", "This is a quiz about science", "scienceicon")
         topic3.questions=[QuestionObject(1, "e = ?", ["mc^2", "pi", "2", "avogadro's number"])]
-        subjectList = [topic1, topic2, topic3]
-
+        self.subjectList.append(topic1)
+        self.subjectList.append(topic2)
+        self.subjectList.append(topic3)*/
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
