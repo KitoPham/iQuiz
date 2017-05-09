@@ -61,7 +61,7 @@ class subjectTableViewController: UITableViewController {
  
         
         //HOMEWORK USAGE OF ALAMO
-        /*
+        
         Alamofire.request(url!).responseJSON{ response in
             debugPrint(response)
             
@@ -87,7 +87,7 @@ class subjectTableViewController: UITableViewController {
             }
             self.tableView.reloadData()
         }
-        */
+        
         //ALAMO Images
         /*
          Alamofire.request("https://students.washington.edu/kpham97/ACE_Website/images/logo.jpg").responseData { response in

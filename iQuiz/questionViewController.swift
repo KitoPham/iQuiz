@@ -34,24 +34,24 @@ class questionViewController: UIViewController {
         Answer3.setTitle(currentQuestion!.Answer[2], for: .normal)
         Answer4.setTitle(currentQuestion!.Answer[3], for: .normal)
         
-        let recognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
-        recognizer.direction = .right
+        let recognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeleft))
+        recognizer.direction = .left
         self.view .addGestureRecognizer(recognizer)
         
-        let leftrecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
-        leftrecognizer.direction = .left
-        self.view .addGestureRecognizer(leftrecognizer)
+        let rightrecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiperight))
+        rightrecognizer.direction = .right
+        self.view .addGestureRecognizer(rightrecognizer)
         
     
         
         
     }
     
-    func swipeLeft(recognizer : UISwipeGestureRecognizer) {
+    func swiperight(recognizer : UISwipeGestureRecognizer) {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func swipeRight(recognizer : UISwipeGestureRecognizer) {
+    func swipeleft(recognizer : UISwipeGestureRecognizer) {
         if (Nextbutton.isEnabled){
             performSegue(withIdentifier: "ToAnswer", sender: self)
         }
