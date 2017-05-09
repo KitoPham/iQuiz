@@ -24,6 +24,44 @@ class subjectTableViewController: UITableViewController {
         self.tableViewObject.dataSource = self
         
         let url = URL(string: "https://tednewardsandbox.site44.com/questions.json")
+
+
+        //INTRO FOR ALAMO
+        /*Alamofire.request(url!)
+        /*.validate(statusCode:200..<300)
+        .validate(contentType:["application/json"])*/
+        .responseString { response in
+            print(response.request)  // original URL request, request form
+            print(response.response) // HTTP URL response, https headers and info
+            print(response.data)     // server data, size
+            print(response.result)   // result of response serialization, success or error
+            
+           /* if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }*/
+        }
+        */
+
+
+        //USEFUL AUTHENTICATION
+        /*
+        let user = "user"
+        let password = "password"
+        
+        Alamofire.request("https://httpbin.org/basic-auth/user/testClassPassword")
+            .authenticate(user: user, password: password)
+            .responseJSON { response in
+                debugPrint(response)
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+        }
+        */
+        
+ 
+        
+        //HOMEWORK USAGE OF ALAMO
+        /*
         Alamofire.request(url!).responseJSON{ response in
             debugPrint(response)
             
@@ -49,9 +87,21 @@ class subjectTableViewController: UITableViewController {
             }
             self.tableView.reloadData()
         }
-       
+        */
+        //ALAMO Images
+        /*
+         Alamofire.request("https://students.washington.edu/kpham97/ACE_Website/images/logo.jpg").responseData { response in
+            if let data = response.result.value {
+                let image = UIImage(data: data)
+                for index in 0...self.subjectList.count - 1 {
+                    self.subjectList[index].iconImage = image
+                }
+            }
+            self.tableView.reloadData()
+        }
+        */
         
-        
+
         
         
        /* let topic1 = subjectItem("Mathematics", "This is a quiz about math", "mathicon")
@@ -95,7 +145,11 @@ class subjectTableViewController: UITableViewController {
         let subjectItem = self.subjectList[indexPath.row]
         cell.TitleLabel.text = subjectItem.subjectTitle
         cell.descriptionLabel.text = subjectItem.descriptionText
-        cell.imageObject.image = UIImage(named: subjectItem.icon)
+        if subjectItem.iconImage != nil{
+            cell.imageObject.image = subjectItem.iconImage!
+        } else {
+            cell.imageObject.image = UIImage(named: subjectItem.icon)
+        }
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

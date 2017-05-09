@@ -10,11 +10,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iQuiz/subjectTableViewController.swift"
-            timestampString = "516051070.387605"
+            timestampString = "516055595.701506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iQuiz/subjectTableViewController.swift"
+            timestampString = "516055595.701506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -26,12 +42,12 @@
                   moduleName = "iQuiz"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectTableViewController.swift"
-                  timestampString = "516051071.527458"
+                  timestampString = "516057395.213109"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "874">
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "609">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +57,12 @@
                   moduleName = "iQuiz"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectTableViewController.swift"
-                  timestampString = "516051071.530201"
+                  timestampString = "516057395.215707"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "626">
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "26">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -58,93 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iQuiz/subjectTableViewController.swift"
-            timestampString = "516020067.227302"
+            timestampString = "516055595.701506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iQuiz.subjectTableViewController.viewDidLoad () -&gt; ()"
-                  moduleName = "iQuiz"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectTableViewController.swift"
-                  timestampString = "516051071.534256"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "579">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iQuiz.subjectTableViewController.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "iQuiz"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectTableViewController.swift"
-                  timestampString = "516051071.536186"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "22">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iQuiz/subjectTableViewController.swift"
-            timestampString = "516051070.387605"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iQuiz.subjectTableViewController.viewDidLoad () -&gt; ()"
-                  moduleName = "iQuiz"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectTableViewController.swift"
-                  timestampString = "516051071.54109"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "874">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iQuiz.subjectTableViewController.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "iQuiz"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectTableViewController.swift"
-                  timestampString = "516051071.543008"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "626">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -223,6 +159,149 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iQuiz/subjectTableViewController.swift"
+            timestampString = "516055595.701506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iQuiz.subjectTableViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "iQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectTableViewController.swift"
+                  timestampString = "516052850.424117"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "781">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iQuiz.subjectTableViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "iQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectTableViewController.swift"
+                  timestampString = "516052850.426825"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1205">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iQuiz/subjectItem.swift"
+            timestampString = "516055252.956092"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "subjectItem"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iQuiz.subjectItem.iconImage.getter : Swift.Optional&lt;__ObjC.UIImage&gt;"
+                  moduleName = "iQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectItem.swift"
+                  timestampString = "516057395.292114"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iQuiz.subjectItem.iconImage.setter : Swift.Optional&lt;__ObjC.UIImage&gt;"
+                  moduleName = "iQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectItem.swift"
+                  timestampString = "516057395.295029"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iQuiz.subjectItem.init (Swift.String, Swift.String, Swift.String) -&gt; iQuiz.subjectItem"
+                  moduleName = "iQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/studentuser/Desktop/iquiz/iQuiz/subjectItem.swift"
+                  timestampString = "516057395.297935"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "376">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iQuiz/subjectTableViewController.swift"
+            timestampString = "516057436.86337"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iQuiz/subjectTableViewController.swift"
+            timestampString = "516057375.54055"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

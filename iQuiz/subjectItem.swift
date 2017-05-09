@@ -14,6 +14,7 @@ class subjectItem: NSObject {
     var subjectTitle : String = ""
     var descriptionText : String = ""
     var icon : String = ""
+    var iconImage : UIImage?
     
 
     
