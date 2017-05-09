@@ -63,17 +63,27 @@ class answerViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let questionView = segue.destination as! questionViewController
         
+        if segue.identifier == "continueSegue"{
+            let questionView = segue.destination as! questionViewController
         
-        questionNum += 1
-        questionView.subjectTopic = self.subjectTopic
-        questionView.questionNum = self.questionNum
-        questionView.correctNum = self.correctNum
+            questionNum += 1
+            questionView.subjectTopic = self.subjectTopic
+            questionView.questionNum = self.questionNum
+            questionView.correctNum = self.correctNum
+        }
         
         
     }
     
+    @IBAction func segueChoice(_ sender: Any) {
+        if questionNum >= (subjectTopic?.questions.count)!{
+            performSegue(withIdentifier: "finishedSegue", sender: self)
+        } else {
+            performSegue(withIdentifier: "continueSegue", sender: self)
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
