@@ -22,11 +22,13 @@ class subjectTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableViewObject.delegate = self
         self.tableViewObject.dataSource = self
+        
         let url = URL(string: "https://tednewardsandbox.site44.com/questions.json")
-
         Alamofire.request(url!).responseJSON{ response in
             debugPrint(response)
-            if let json = response.result.value as? [[String:Any]]{
+            
+            
+            /*if let json = response.result.value as? [[String:Any]]{
                 for index in 0...json.count - 1{
                     let title = json[index]["title"] as! String
                     let description = json[index]["desc"] as!String
@@ -45,7 +47,7 @@ class subjectTableViewController: UITableViewController {
                 }
                 /*print("JSON: \(json)")*/
             }
-            self.tableView.reloadData()
+            /*self.tableView.reloadData()*/*/
         }
        
         
