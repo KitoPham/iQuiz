@@ -81,16 +81,18 @@
                                     <outlet property="TitleLabel" destination="5G9-CP-MrO" id="LSF-Ul-SZa"/>
                                     <outlet property="descriptionLabel" destination="M2U-kK-uz8" id="nUg-Yt-AXm"/>
                                     <outlet property="imageObject" destination="La9-p3-tfl" id="f4o-T0-cTr"/>
-                                    <segue destination="j9L-DA-uL6" kind="show" identifier="ToQuestion" id="MwU-4s-NLx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="2gX-qm-sHv" id="P9y-qN-gbR"/>
-                            <outlet property="delegate" destination="2gX-qm-sHv" id="cQj-oh-hue"/>
+                            <outlet property="dataSource" destination="2gX-qm-sHv" id="Oxn-ph-U3v"/>
+                            <outlet property="delegate" destination="2gX-qm-sHv" id="giN-YD-OBy"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Subjects" id="6kG-0l-bqm"/>
+                    <connections>
+                        <outlet property="tableViewObject" destination="j07-9s-bb2" id="mTN-S7-9ZO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETX-zb-TbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,7 +101,7 @@
         <!--Question Scene-->
         <scene sceneID="yfb-G4-gOw">
             <objects>
-                <viewController storyboardIdentifier="Question Scene" title="Question Scene" id="j9L-DA-uL6" customClass="questionViewController" customModule="iQuiz" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="questionScene" title="Question Scene" id="j9L-DA-uL6" customClass="questionViewController" customModule="iQuiz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S9D-Xb-f71"/>
                         <viewControllerLayoutGuide type="bottom" id="KJe-07-c9w"/>
@@ -420,10 +422,10 @@
             </objects>
             <point key="canvasLocation" x="2245" y="59"/>
         </scene>
-        <!--View Controller-->
+        <!--Finished View Controller-->
         <scene sceneID="8o1-md-6mt">
             <objects>
-                <viewController id="sxa-Cy-zje" sceneMemberID="viewController">
+                <viewController id="sxa-Cy-zje" customClass="FinishedViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WBg-n5-slH"/>
                         <viewControllerLayoutGuide type="bottom" id="pk6-Rg-c1F"/>
@@ -432,16 +434,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvG-3Z-fvk">
-                                <rect key="frame" x="187" y="313" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ss9-F2-In8">
+                                <rect key="frame" x="31.666666666666657" y="319" width="350.66666666666663" height="98"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rje-gx-XMQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="350.66666666666663" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cue-II-K2a">
+                                        <rect key="frame" x="0.0" y="20.333333333333314" width="350.66666666666663" height="57.333333333333371"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blank out of blank correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faV-kP-ur7">
+                                        <rect key="frame" x="0.0" y="77.666666666666686" width="350.66666666666663" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gk5-aO-W4S">
+                                <rect key="frame" x="316" y="686" width="58" height="30"/>
+                                <state key="normal" title="Go Back"/>
+                                <connections>
+                                    <action selector="goBack:" destination="sxa-Cy-zje" eventType="touchUpInside" id="OYW-vQ-rfb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gk5-aO-W4S" secondAttribute="trailing" constant="20" id="2vQ-Dz-CbB"/>
+                            <constraint firstItem="pk6-Rg-c1F" firstAttribute="top" secondItem="gk5-aO-W4S" secondAttribute="bottom" constant="20" id="hH0-kg-Vso"/>
+                            <constraint firstItem="ss9-F2-In8" firstAttribute="centerY" secondItem="KBE-bf-fEZ" secondAttribute="centerY" id="kZf-2d-zrM"/>
+                            <constraint firstItem="ss9-F2-In8" firstAttribute="centerX" secondItem="KBE-bf-fEZ" secondAttribute="centerX" id="vu2-uQ-sdZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="DescriptionLabel" destination="Rje-gx-XMQ" id="XG0-3e-DGO"/>
+                        <outlet property="StatLabel" destination="faV-kP-ur7" id="1yn-zA-hKd"/>
+                        <outlet property="percentLabel" destination="cue-II-K2a" id="P0H-MT-0nA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvP-c6-1Fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -451,7 +487,4 @@
     <resources>
         <image name="imgres" width="26" height="27"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ppW-rh-oxw"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -50,7 +50,9 @@ class answerViewController: UIViewController {
             self.view.viewWithTag(currQuestion!.correctAnswer)?.backgroundColor = UIColor.green
             QuestionLabel.text = "Incorrect!!"
         }
-        navigationItem.hidesBackButton = true
+        
+        self.navigationItem.title = subjectTopic?.subjectTitle
+        self.navigationItem.hidesBackButton = true
         CorrectLabel.text = "\(correctNum) out of \(questionNum) correct"
 
         // Do any additional setup after loading the view.
@@ -71,6 +73,11 @@ class answerViewController: UIViewController {
             questionView.subjectTopic = self.subjectTopic
             questionView.questionNum = self.questionNum
             questionView.correctNum = self.correctNum
+        } else {
+            let finishView = segue.destination as! FinishedViewController
+            finishView.total = self.questionNum
+            finishView.correct = self.correctNum
+            finishView.subject = self.subjectTopic?.subjectTitle
         }
         
         

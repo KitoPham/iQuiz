@@ -14,16 +14,23 @@ class subjectTableViewController: UITableViewController {
     var subjectList : [subjectItem] = []
     var subjectNum = 0
     
+    @IBOutlet var tableViewObject: UITableView!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.tableViewObject.delegate = self
+        self.tableViewObject.dataSource = self
         let topic1 = subjectItem("Mathematics", "This is a quiz about math", "mathicon")
         let QuestionOne = QuestionObject(4, "What is 2+2", ["1", "2", "3", "4"])
         let QuestionTwo = QuestionObject(2, "What is 1+1", ["1", "2", "3", "4"])
         topic1.questions = [QuestionOne,QuestionTwo]
         let topic2 = subjectItem("Marvel Super Heroes", "This is a quiz about marvel", "heroicon")
+        let QuestionOne1 = QuestionObject(4, "Who is cool", ["superman", "batman", "green arrow", "captain america"])
+        let QuestionTwo2 = QuestionObject(2, "Who wears a metal suit", ["hulk", "ironman", "hawkeye", "red hulk"])
+        topic2.questions = [QuestionOne1, QuestionTwo2]
         let topic3 = subjectItem("Science", "This is a quiz about science", "scienceicon")
-        
+        topic3.questions=[QuestionObject(1, "e = ?", ["mc^2", "pi", "2", "avogadro's number"])]
         subjectList = [topic1, topic2, topic3]
 
     }
@@ -56,13 +63,18 @@ class subjectTableViewController: UITableViewController {
         cell.imageObject.image = UIImage(named: subjectItem.icon)
         return cell
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            print("cell # \(indexPath.row) selected")
+        
         subjectNum = indexPath.row
-        performSegue(withIdentifier: "ToQuestion", sender: self)
+            let questionView = self.storyboard?.instantiateViewController(withIdentifier: "questionScene") as! questionViewController
+            
+            questionView.subjectTopic = self.subjectList[subjectNum]
+            self.navigationController?.pushViewController(questionView, animated: true)
+            //self.performSegue(withIdentifier: "ToQuestion", sender: self)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let questionView = segue.destination as! questionViewController
         questionView.subjectTopic = subjectList[subjectNum]
     }

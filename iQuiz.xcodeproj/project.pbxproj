@@ -20,6 +20,7 @@
 		494D1E841EC17DB6000C5852 /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D1E831EC17DB6000C5852 /* questionViewController.swift */; };
 		494D1E861EC17DE5000C5852 /* QuestionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D1E851EC17DE5000C5852 /* QuestionObject.swift */; };
 		494D1E881EC18D7A000C5852 /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D1E871EC18D7A000C5852 /* answerViewController.swift */; };
+		494D1E8A1EC1B2AB000C5852 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D1E891EC1B2AB000C5852 /* FinishedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		494D1E831EC17DB6000C5852 /* questionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
 		494D1E851EC17DE5000C5852 /* QuestionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionObject.swift; sourceTree = "<group>"; };
 		494D1E871EC18D7A000C5852 /* answerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
+		494D1E891EC1B2AB000C5852 /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				494D1E851EC17DE5000C5852 /* QuestionObject.swift */,
 				0CCEC08C1EB8457D00D054F1 /* AppDelegate.swift */,
 				0CCEC08E1EB8457D00D054F1 /* ViewController.swift */,
+				494D1E891EC1B2AB000C5852 /* FinishedViewController.swift */,
 				0CCEC0901EB8457D00D054F1 /* Main.storyboard */,
 				0CCEC0931EB8457E00D054F1 /* Assets.xcassets */,
 				0CCEC0951EB8457E00D054F1 /* LaunchScreen.storyboard */,
@@ -280,6 +283,7 @@
 				494D1E841EC17DB6000C5852 /* questionViewController.swift in Sources */,
 				0CC228331EB84EAE003BCC3B /* subjectTableViewCell.swift in Sources */,
 				0CC228351EB84EB4003BCC3B /* subjectTableViewController.swift in Sources */,
+				494D1E8A1EC1B2AB000C5852 /* FinishedViewController.swift in Sources */,
 				0CCEC08F1EB8457D00D054F1 /* ViewController.swift in Sources */,
 				494D1E881EC18D7A000C5852 /* answerViewController.swift in Sources */,
 				0CCEC0C31EB849A100D054F1 /* subjectItem.swift in Sources */,

@@ -24,7 +24,8 @@ class questionViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var QuestionNumLabel: UILabel!
     override func viewDidLoad() {
-        
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.title = subjectTopic?.subjectTitle
         currentQuestion = subjectTopic?.questions[questionNum - 1]
         questionLabel.text = currentQuestion!.question
         QuestionNumLabel.text = "Question #\(questionNum)"
@@ -39,10 +40,10 @@ class questionViewController: UIViewController {
     }
 
     @IBAction func AnswerOnClick(_ sender: UIButton) {
-        Answer1.backgroundColor = UIColor.gray
-        Answer2.backgroundColor = UIColor.gray
-        Answer3.backgroundColor = UIColor.gray
-        Answer4.backgroundColor = UIColor.gray
+        Answer1.backgroundColor = UIColor.lightGray
+        Answer2.backgroundColor = UIColor.lightGray
+        Answer3.backgroundColor = UIColor.lightGray
+        Answer4.backgroundColor = UIColor.lightGray
         
         Nextbutton.isEnabled = true
         sender.backgroundColor = UIColor.blue
