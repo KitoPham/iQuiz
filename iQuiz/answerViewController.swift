@@ -54,11 +54,29 @@ class answerViewController: UIViewController {
         self.navigationItem.title = subjectTopic?.subjectTitle
         self.navigationItem.hidesBackButton = true
         CorrectLabel.text = "\(correctNum) out of \(questionNum) correct"
+        
+        let recognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
+        recognizer.direction = .right
+        self.view .addGestureRecognizer(recognizer)
+        
+        let leftrecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
+        leftrecognizer.direction = .left
+        self.view .addGestureRecognizer(leftrecognizer)
+        
+        
 
         // Do any additional setup after loading the view.
         
     }
+    
+    func swipeRight(recognizer : UISwipeGestureRecognizer) {
+        segueChoice(self)
+    }
 
+    func swipeLeft(recognizer : UISwipeGestureRecognizer) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

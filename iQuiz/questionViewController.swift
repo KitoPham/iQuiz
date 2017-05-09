@@ -34,10 +34,29 @@ class questionViewController: UIViewController {
         Answer3.setTitle(currentQuestion!.Answer[2], for: .normal)
         Answer4.setTitle(currentQuestion!.Answer[3], for: .normal)
         
+        let recognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
+        recognizer.direction = .right
+        self.view .addGestureRecognizer(recognizer)
+        
+        let leftrecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
+        leftrecognizer.direction = .left
+        self.view .addGestureRecognizer(leftrecognizer)
+        
     
         
         
     }
+    
+    func swipeLeft(recognizer : UISwipeGestureRecognizer) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func swipeRight(recognizer : UISwipeGestureRecognizer) {
+        if (Nextbutton.isEnabled){
+            performSegue(withIdentifier: "ToAnswer", sender: self)
+        }
+    }
+    
 
     @IBAction func AnswerOnClick(_ sender: UIButton) {
         Answer1.backgroundColor = UIColor.lightGray

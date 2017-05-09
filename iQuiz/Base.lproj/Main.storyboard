@@ -111,7 +111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="h7O-Ox-rKe">
-                                <rect key="frame" x="30" y="74" width="354" height="490"/>
+                                <rect key="frame" x="30" y="30" width="354" height="490"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-W3-GyO">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="200"/>
@@ -204,7 +204,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="VAA-SN-G4s" kind="show" id="3aF-mp-eeT"/>
+                                                    <segue destination="VAA-SN-G4s" kind="show" identifier="ToAnswer" id="3aF-mp-eeT"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -292,7 +292,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NNO-e5-uGE">
-                                <rect key="frame" x="30" y="74" width="354" height="490"/>
+                                <rect key="frame" x="30" y="30" width="354" height="490"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lbU-Sg-vuV">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="200"/>

@@ -36,8 +36,24 @@ class FinishedViewController: UIViewController {
         percentLabel.text = String(round(percent * 10000)/100) + "%"
         StatLabel.text = "\(correct) out of \(total)"
         
+        let recognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
+        recognizer.direction = .right
+        self.view .addGestureRecognizer(recognizer)
+        
+        let leftrecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
+        leftrecognizer.direction = .left
+        self.view .addGestureRecognizer(leftrecognizer)
+        
         
         // Do any additional setup after loading the view.
+    }
+    
+    func swipeRight(recognizer : UISwipeGestureRecognizer) {
+        goBack(self)
+    }
+    
+    func swipeLeft(recognizer : UISwipeGestureRecognizer) {
+        goBack(self)
     }
 
 

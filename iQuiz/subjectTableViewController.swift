@@ -28,7 +28,7 @@ class subjectTableViewController: UITableViewController {
             debugPrint(response)
             
             
-            /*if let json = response.result.value as? [[String:Any]]{
+            if let json = response.result.value as? [[String:Any]]{
                 for index in 0...json.count - 1{
                     let title = json[index]["title"] as! String
                     let description = json[index]["desc"] as!String
@@ -47,7 +47,7 @@ class subjectTableViewController: UITableViewController {
                 }
                 /*print("JSON: \(json)")*/
             }
-            /*self.tableView.reloadData()*/*/
+            self.tableView.reloadData()
         }
        
         
