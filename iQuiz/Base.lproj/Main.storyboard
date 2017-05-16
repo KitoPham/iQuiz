@@ -90,6 +90,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Subjects" id="6kG-0l-bqm"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="8XY-5B-mQU">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="2gX-qm-sHv" eventType="valueChanged" id="nUc-jf-cFU"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="tableViewObject" destination="j07-9s-bb2" id="mTN-S7-9ZO"/>
                     </connections>

@@ -104,6 +104,11 @@ class subjectTableViewController: UITableViewController {
         
     }
     
+    @IBAction func refresh(_ sender: UIRefreshControl) {
+        sender.beginRefreshing()
+        self.tableView.reloadData()
+        sender.endRefreshing()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
