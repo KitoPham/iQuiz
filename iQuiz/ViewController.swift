@@ -11,6 +11,19 @@ import Alamofire
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var checkbutton: UIButton!
+    @IBOutlet weak var edit: UIButton!
+    @IBAction func editbutton(_ sender: Any) {
+        if UrlTextField.isEditing || UrlTextField.isEnabled{
+            UrlTextField.isEnabled = false
+            edit.setTitle("Edit", for: UIControlState.normal)
+            checkbutton.isEnabled = true
+        } else {
+            UrlTextField.isEnabled = true
+            checkbutton.isEnabled = false
+            edit.setTitle("Finish", for: UIControlState.normal)
+        }
+    }
     @IBOutlet weak var UrlTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +50,9 @@ class ViewController: UIViewController {
             
             return(fileURL, [.createIntermediateDirectories, .removePreviousFile])
         }
-        
+        if appdata.shared.webUrl != nil {
         Alamofire.download(appdata.shared.webUrl!, method: .get,to: destination).responseJSON{ response in
             debugPrint(response)
-            appdata.shared.loadJson()
             switch response.result{
             case .success:
                 let alert = UIAlertController(title:"settings", message:"download successful", preferredStyle: UIAlertControllerStyle.alert)
@@ -51,6 +63,7 @@ class ViewController: UIViewController {
                 alert.addAction(UIAlertAction(title:"close", style: UIAlertActionStyle.default, handler:nil))
                 self.present(alert,animated:true, completion: nil)
             }
+        }
         }
     }
 

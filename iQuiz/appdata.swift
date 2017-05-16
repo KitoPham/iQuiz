@@ -40,8 +40,8 @@ class appdata: NSObject {
             }
         }
         
+        appdata.shared.subjectList = []
         if json.count > 0 {
-            appdata.shared.subjectList = []
             for index in 0...json.count - 1{
                 let title = json[index]["title"] as! String
                 let description = json[index]["desc"] as!String

@@ -11,7 +11,6 @@ import Alamofire
 
 
 class subjectTableViewController: UITableViewController {
-
     var subjectNum = 0
     
     @IBOutlet var tableViewObject: UITableView!
