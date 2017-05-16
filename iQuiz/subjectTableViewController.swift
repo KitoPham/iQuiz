@@ -12,25 +12,37 @@ import Alamofire
 
 class subjectTableViewController: UITableViewController {
 
-    var subjectList : [subjectItem] = []
     var subjectNum = 0
     
     @IBOutlet var tableViewObject: UITableView!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.tableViewObject.delegate = self
         self.tableViewObject.dataSource = self
         
-        let url = URL(string: "https://tednewardsandbox.site44.com/questions.json")
-
+        
+        let destination: DownloadRequest.DownloadFileDestination = {_, _ in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent("questions.json")
+            
+            return(fileURL, [.createIntermediateDirectories])
+        }
+        
+        Alamofire.download(appdata.shared.webUrl!, method: .get,to: destination).responseJSON{ response in
+            debugPrint(response)
+            
+            appdata.shared.loadJson()
+            self.tableView.reloadData()
+        }
+        self.tableView.reloadData()
+        
 
         //INTRO FOR ALAMO
         /*Alamofire.request(url!)
         /*.validate(statusCode:200..<300)
         .validate(contentType:["application/json"])*/
-        .responseString { response in
+        .responseJSON{ response in
             print(response.request)  // original URL request, request form
             print(response.response) // HTTP URL response, https headers and info
             print(response.data)     // server data, size
@@ -47,9 +59,11 @@ class subjectTableViewController: UITableViewController {
         /*
         let user = "user"
         let password = "password"
-        
+        let credential = URLCredential(user: user, password: password, persistence: .forSession)
+         
+         
         Alamofire.request("https://httpbin.org/basic-auth/user/testClassPassword")
-            .authenticate(user: user, password: password)
+            .authenticate(usingCredential: credential)
             .responseJSON { response in
                 debugPrint(response)
                 if let JSON = response.result.value {
@@ -58,35 +72,6 @@ class subjectTableViewController: UITableViewController {
         }
         */
         
- 
-        
-        //HOMEWORK USAGE OF ALAMO
-        
-        Alamofire.request(url!).responseJSON{ response in
-            debugPrint(response)
-            
-            
-            if let json = response.result.value as? [[String:Any]]{
-                for index in 0...json.count - 1{
-                    let title = json[index]["title"] as! String
-                    let description = json[index]["desc"] as!String
-                    let questions = json[index]["questions"] as! [[String:Any]]
-                    var questionList : [QuestionObject] = []
-                    for num in 0...questions.count - 1{
-                        let question = questions[num]["text"] as! String
-                        let correctAnswer = questions[num]["answer"] as! String
-                        let answers = questions[num]["answers"] as! [String]
-                        questionList.append(QuestionObject(Int(correctAnswer)!, question, answers))
-                    }
-                    
-                    self.subjectList.append(subjectItem(title, description, "mathicon"))
-                    self.subjectList[index].questions = questionList
-                    
-                }
-                /*print("JSON: \(json)")*/
-            }
-            self.tableView.reloadData()
-        }
         
         //ALAMO Images
         /*
@@ -120,10 +105,16 @@ class subjectTableViewController: UITableViewController {
         
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.tableView.reloadData()
+        appdata.shared.loadJson()
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
+
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -135,14 +126,14 @@ class subjectTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return subjectList.count
+        return appdata.shared.subjectList.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath) as! subjectTableViewCell
 
-        let subjectItem = self.subjectList[indexPath.row]
+        let subjectItem = appdata.shared.subjectList[indexPath.row]
         cell.TitleLabel.text = subjectItem.subjectTitle
         cell.descriptionLabel.text = subjectItem.descriptionText
         if subjectItem.iconImage != nil{
@@ -158,14 +149,13 @@ class subjectTableViewController: UITableViewController {
         subjectNum = indexPath.row
             let questionView = self.storyboard?.instantiateViewController(withIdentifier: "questionScene") as! questionViewController
             
-            questionView.subjectTopic = self.subjectList[subjectNum]
+            appdata.shared.subjectTopic = appdata.shared.subjectList[subjectNum]
             self.navigationController?.pushViewController(questionView, animated: true)
             //self.performSegue(withIdentifier: "ToQuestion", sender: self)
     }
 
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let questionView = segue.destination as! questionViewController
-        questionView.subjectTopic = subjectList[subjectNum]
+        appdata.shared.subjectTopic = appdata.shared.subjectList[subjectNum]
     }
 
     /*

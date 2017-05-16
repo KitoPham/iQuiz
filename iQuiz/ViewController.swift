@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var UrlTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,12 +20,41 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let alert = UIAlertController(title:"settings", message:"you just opened settings!!", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title:"close", style: UIAlertActionStyle.default, handler:nil))
-        self.present(alert,animated:true, completion: nil)
+        UrlTextField.text = appdata.shared.webString
         
     }
 
+    
+    @IBAction func newUrl(_ sender: Any) {
+        appdata.shared.webUrl = URL(string: UrlTextField.text!)
+        appdata.shared.webString = UrlTextField.text!
+    }
+    @IBAction func reloadData(_ sender: Any) {
+        
+        let destination: DownloadRequest.DownloadFileDestination = {_, _ in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent("questions.json")
+            
+            return(fileURL, [.createIntermediateDirectories, .removePreviousFile])
+        }
+        
+        Alamofire.download(appdata.shared.webUrl!, method: .get,to: destination).responseJSON{ response in
+            debugPrint(response)
+            appdata.shared.loadJson()
+            switch response.result{
+            case .success:
+                let alert = UIAlertController(title:"settings", message:"download successful", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title:"close", style: UIAlertActionStyle.default, handler:nil))
+                self.present(alert,animated:true, completion: nil)
+            case .failure:
+                let alert = UIAlertController(title:"settings", message:"download unsuccessful", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title:"close", style: UIAlertActionStyle.default, handler:nil))
+                self.present(alert,animated:true, completion: nil)
+            }
+        }
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -22,6 +22,7 @@
 		494D1E861EC17DE5000C5852 /* QuestionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D1E851EC17DE5000C5852 /* QuestionObject.swift */; };
 		494D1E881EC18D7A000C5852 /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D1E871EC18D7A000C5852 /* answerViewController.swift */; };
 		494D1E8A1EC1B2AB000C5852 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D1E891EC1B2AB000C5852 /* FinishedViewController.swift */; };
+		49AF0EDF1ECAEC360046B517 /* appdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF0EDE1ECAEC360046B517 /* appdata.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		494D1E851EC17DE5000C5852 /* QuestionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionObject.swift; sourceTree = "<group>"; };
 		494D1E871EC18D7A000C5852 /* answerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
 		494D1E891EC1B2AB000C5852 /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedViewController.swift; sourceTree = "<group>"; };
+		49AF0EDE1ECAEC360046B517 /* appdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = appdata.swift; sourceTree = "<group>"; };
 		82B2BC529ADC3D91DC09E027 /* Pods-iQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-iQuiz/Pods-iQuiz.release.xcconfig"; sourceTree = "<group>"; };
 		AB5AF4E19AD518FB5B72812F /* Pods_iQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFFD46265D2378E4F800831 /* Pods-iQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iQuiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iQuiz/Pods-iQuiz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				0CC228321EB84EAE003BCC3B /* subjectTableViewCell.swift */,
 				0CC228341EB84EB4003BCC3B /* subjectTableViewController.swift */,
+				49AF0EDE1ECAEC360046B517 /* appdata.swift */,
 				0CCEC0C21EB849A100D054F1 /* subjectItem.swift */,
 				494D1E831EC17DB6000C5852 /* questionViewController.swift */,
 				494D1E871EC18D7A000C5852 /* answerViewController.swift */,
@@ -358,6 +361,7 @@
 				494D1E841EC17DB6000C5852 /* questionViewController.swift in Sources */,
 				0CC228331EB84EAE003BCC3B /* subjectTableViewCell.swift in Sources */,
 				0CC228351EB84EB4003BCC3B /* subjectTableViewController.swift in Sources */,
+				49AF0EDF1ECAEC360046B517 /* appdata.swift in Sources */,
 				494D1E8A1EC1B2AB000C5852 /* FinishedViewController.swift in Sources */,
 				0CCEC08F1EB8457D00D054F1 /* ViewController.swift in Sources */,
 				494D1E881EC18D7A000C5852 /* answerViewController.swift in Sources */,

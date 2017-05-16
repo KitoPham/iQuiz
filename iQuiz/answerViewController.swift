@@ -9,11 +9,9 @@
 import UIKit
 
 class answerViewController: UIViewController {
-    var subjectTopic : subjectItem?
     var currQuestion : QuestionObject?
     var answer = 0
-    var questionNum = 0
-    var correctNum = 0
+
     
     @IBOutlet weak var QuestionNumLabel: UILabel!
     @IBOutlet weak var CorrectLabel: UILabel!
@@ -29,12 +27,13 @@ class answerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        QuestionNumLabel.text = "Question # \(questionNum)"
+        QuestionNumLabel.text = "Question # \(appdata.shared.questionNum)"
         
-        Answer1.backgroundColor = UIColor.red
+        /*Answer1.backgroundColor = UIColor.red
         Answer2.backgroundColor = UIColor.red
         Answer3.backgroundColor = UIColor.red
         Answer4.backgroundColor = UIColor.red
+        */
         
         Answer1.setTitle(currQuestion!.Answer[0], for: .normal)
         Answer2.setTitle(currQuestion!.Answer[1], for: .normal)
@@ -42,18 +41,18 @@ class answerViewController: UIViewController {
         Answer4.setTitle(currQuestion!.Answer[3], for: .normal)
         
         if (answer == currQuestion!.correctAnswer){
-            correctNum += 1
+            appdata.shared.correctNum += 1
             self.view.viewWithTag(answer)?.backgroundColor = UIColor.green
             QuestionLabel.text = "Correct!!"
         } else {
-            self.view.viewWithTag(answer)?.backgroundColor = UIColor.blue
+            self.view.viewWithTag(answer)?.backgroundColor = UIColor.red
             self.view.viewWithTag(currQuestion!.correctAnswer)?.backgroundColor = UIColor.green
             QuestionLabel.text = "Incorrect!!"
         }
         
-        self.navigationItem.title = subjectTopic?.subjectTitle
+        self.navigationItem.title = appdata.shared.subjectTopic?.subjectTitle
         self.navigationItem.hidesBackButton = true
-        CorrectLabel.text = "\(correctNum) out of \(questionNum) correct"
+        CorrectLabel.text = "\(appdata.shared.correctNum) out of \(appdata.shared.questionNum) correct"
         
         let recognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeleft))
         recognizer.direction = .left
@@ -82,27 +81,8 @@ class answerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "continueSegue"{
-            let questionView = segue.destination as! questionViewController
-        
-            questionNum += 1
-            questionView.subjectTopic = self.subjectTopic
-            questionView.questionNum = self.questionNum
-            questionView.correctNum = self.correctNum
-        } else {
-            let finishView = segue.destination as! FinishedViewController
-            finishView.total = self.questionNum
-            finishView.correct = self.correctNum
-            finishView.subject = self.subjectTopic?.subjectTitle
-        }
-        
-        
-    }
-    
     @IBAction func segueChoice(_ sender: Any) {
-        if questionNum >= (subjectTopic?.questions.count)!{
+        if appdata.shared.questionNum >= (appdata.shared.subjectTopic?.questions.count)!{
             performSegue(withIdentifier: "finishedSegue", sender: self)
         } else {
             performSegue(withIdentifier: "continueSegue", sender: self)

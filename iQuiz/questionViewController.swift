@@ -9,11 +9,8 @@
 import UIKit
 
 class questionViewController: UIViewController {
-    var subjectTopic : subjectItem?
     var currentQuestion : QuestionObject?
     var answer = 0
-    var questionNum = 1
-    var correctNum = 0
     
     
     @IBOutlet weak var Nextbutton: UIButton!
@@ -25,10 +22,11 @@ class questionViewController: UIViewController {
     @IBOutlet weak var QuestionNumLabel: UILabel!
     override func viewDidLoad() {
         self.navigationItem.hidesBackButton = true
-        self.navigationItem.title = subjectTopic?.subjectTitle
-        currentQuestion = subjectTopic?.questions[questionNum - 1]
+        self.navigationItem.title = appdata.shared.subjectTopic?.subjectTitle
+        appdata.shared.questionNum += 1
+        currentQuestion = appdata.shared.subjectTopic?.questions[appdata.shared.questionNum - 1]
         questionLabel.text = currentQuestion!.question
-        QuestionNumLabel.text = "Question #\(questionNum)"
+        QuestionNumLabel.text = "Question #\(appdata.shared.questionNum)"
         Answer1.setTitle(currentQuestion!.Answer[0], for: .normal)
         Answer2.setTitle(currentQuestion!.Answer[1], for: .normal)
         Answer3.setTitle(currentQuestion!.Answer[2], for: .normal)
@@ -73,12 +71,8 @@ class questionViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let answerView = segue.destination as! answerViewController
-        answerView.subjectTopic = self.subjectTopic
         answerView.currQuestion = self.currentQuestion!
         answerView.answer = self.answer
-        answerView.questionNum = self.questionNum
-        answerView.correctNum = self.correctNum
-        
         
     }
 }

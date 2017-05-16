@@ -10,9 +10,6 @@ import UIKit
 
 class FinishedViewController: UIViewController {
     
-    var subject : String?
-    var total = 0
-    var correct = 0
     
     var percent = 0.0
     
@@ -21,8 +18,8 @@ class FinishedViewController: UIViewController {
     @IBOutlet weak var percentLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.title = subject
-        percent = Double(correct) / Double(total)
+        navigationController?.title = appdata.shared.subjectTopic?.subjectTitle
+        percent = Double(appdata.shared.correctNum) / Double(appdata.shared.questionNum)
         navigationItem.hidesBackButton = true
         if percent == 1{
             DescriptionLabel.text = "Perfect!"
@@ -34,7 +31,7 @@ class FinishedViewController: UIViewController {
             DescriptionLabel.text = "Yikes!"
         }
         percentLabel.text = String(round(percent * 10000)/100) + "%"
-        StatLabel.text = "\(correct) out of \(total)"
+        StatLabel.text = "\(appdata.shared.correctNum) out of \(appdata.shared.questionNum)"
         
         let recognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
         recognizer.direction = .right
@@ -43,6 +40,9 @@ class FinishedViewController: UIViewController {
         let leftrecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
         leftrecognizer.direction = .left
         self.view .addGestureRecognizer(leftrecognizer)
+        
+        appdata.shared.questionNum = 0
+        appdata.shared.correctNum = 0
         
         
         // Do any additional setup after loading the view.

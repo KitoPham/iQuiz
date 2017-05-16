@@ -252,9 +252,44 @@
                     <view key="view" contentMode="scaleToFill" id="6TY-HW-OfH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter URL HERE" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-oX-p4K">
+                                <rect key="frame" x="144.66666666666669" y="353" width="126.00000000000006" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="newUrl:" destination="xGk-pj-s1V" eventType="editingDidEnd" id="DCJ-Cw-VfI"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRG-i9-qA2">
+                                <rect key="frame" x="188.66666666666666" y="322" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYf-vt-ucM">
+                                <rect key="frame" x="167.66666666666666" y="483" width="79" height="30"/>
+                                <state key="normal" title="Check Now"/>
+                                <connections>
+                                    <action selector="reloadData:" destination="xGk-pj-s1V" eventType="touchUpInside" id="sXQ-js-pgQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vRG-i9-qA2" firstAttribute="centerX" secondItem="6TY-HW-OfH" secondAttribute="centerX" id="Dhh-ls-8ib"/>
+                            <constraint firstItem="ia5-oX-p4K" firstAttribute="centerX" secondItem="6TY-HW-OfH" secondAttribute="centerX" id="TT3-cv-Had"/>
+                            <constraint firstItem="eYf-vt-ucM" firstAttribute="centerX" secondItem="6TY-HW-OfH" secondAttribute="centerX" id="Uem-xo-jvz"/>
+                            <constraint firstItem="ia5-oX-p4K" firstAttribute="centerY" secondItem="6TY-HW-OfH" secondAttribute="centerY" id="eTn-v1-0eZ"/>
+                            <constraint firstItem="ia5-oX-p4K" firstAttribute="top" secondItem="vRG-i9-qA2" secondAttribute="bottom" constant="10" id="gu7-Nf-xRc"/>
+                            <constraint firstItem="eYf-vt-ucM" firstAttribute="top" secondItem="ia5-oX-p4K" secondAttribute="bottom" constant="100" id="nH5-CW-c4C"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="imgres" id="yvG-rx-dcl"/>
+                    <connections>
+                        <outlet property="UrlTextField" destination="ia5-oX-p4K" id="Kc1-pp-E6Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZe-07-kiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
